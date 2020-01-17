@@ -1,7 +1,10 @@
 {
-  "title": "Welcome to react using react-i18next",
+  "title": "This is page with articles",
   "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+    "part1": "gghjghjhg",
     "part2": "Switch language between english and german using buttons above."
+  },
+  "article": {
+    "title": "This is name"
   }
 }
