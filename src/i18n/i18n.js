@@ -3,9 +3,6 @@ import { initReactI18next } from 'react-i18next';
 
 import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-// not like to use this?
-// have a look at the Quick start guide
-// for passing in lng and translations on init
 
 i18n
 // load translation using xhr -> see /public/locales
@@ -19,6 +16,10 @@ i18n
 // init i18next
 // for all options read: https://www.i18next.com/overview/configuration-options
 .init({
+	backend: {
+		// for all available options read the backend's repository readme file
+		loadPath: '/locales/{{lng}}.json'
+	},
 	fallbackLng: 'en',
 	debug: true,
 	react: {
@@ -26,7 +27,10 @@ i18n
 	},
 	interpolation: {
 		escapeValue: false, // not needed for react as it escapes by default
-	}
+	},
+	saveMissing: true,
+	load:  'currentOnly'
+
 });
 
 
