@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import news from '../../services/news'
+import news from '../../services/news';
+import NewsPreview from '../NewsPreview';
 
 const NewsFeed = () => {
 
@@ -19,10 +20,13 @@ const NewsFeed = () => {
 				});
 		}, []);
 
+
+
 		return (
-			<div>
-				<div>{state.totalResults}</div>
-			</div>
+			<div>{Array.from(state.articles).map((value, k) => {
+
+					return <NewsPreview article={value} key={k}/>
+			})}</div>
 		)
 };
 
