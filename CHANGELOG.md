@@ -1,3 +1,7 @@
+## 0.4.0
+* ADD: display news
+* ADD: change path for location files
+
 ## 0.3.0
 * ADD: Google News API, fetch news 
 * ADD: Header, HewsFeed components

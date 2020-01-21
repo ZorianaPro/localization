@@ -13,7 +13,7 @@ const NewsPreview = props => {
 			</div>
 			<div className="content content--right">
 				<a href={props.article.url}>{props.article.title}</a>
-				<div>Author: {props.article.author}</div>
+				<div>{t('article.author')}: {props.article.author}</div>
 				<div>{props.article.description}</div>
 				<div>Published at: {props.article.publishedAt}</div>
 			</div>

@@ -21,7 +21,7 @@ const Header = props => {
 	const { t, i18n } = useTranslation();
 	return (
 		<div>
-			<p>{t('title')}</p>
+			{/*<p>{t('title')}</p>*/}
 			<LanguageBar/>
 		</div>
 	)
