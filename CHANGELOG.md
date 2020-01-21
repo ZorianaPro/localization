@@ -1,3 +1,6 @@
+## 0.5.0
+* ADD: try plurals
+
 ## 0.4.0
 * ADD: display news
 * ADD: change path for location files
