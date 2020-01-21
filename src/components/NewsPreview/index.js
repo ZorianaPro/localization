@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css'
 import {useTranslation} from "react-i18next";
-import i18n from '../../i18n/i18n';
+// import i18n from '../../i18n/i18n';
 
 const NewsPreview = props => {
 	const { t, i18n } = useTranslation();

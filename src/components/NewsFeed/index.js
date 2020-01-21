@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import news from '../../services/news';
 import NewsPreview from '../NewsPreview';
+import { useTranslation } from "react-i18next";
 
 const NewsFeed = () => {
 
@@ -21,12 +22,18 @@ const NewsFeed = () => {
 		}, []);
 
 
+		const { t, i18n } = useTranslation();
 
 		return (
-			<div>{Array.from(state.articles).map((value, k) => {
 
-					return <NewsPreview article={value} key={k}/>
-			})}</div>
+			<div>
+				<span>{t('nesting', {count: state.totalResults})}</span>
+				{
+					Array.from(state.articles).map((value, k) => {
+						return <NewsPreview article={value} key={k}/>
+					})
+				}
+				</div>
 		)
 };
 

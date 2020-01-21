@@ -6,5 +6,8 @@
   },
   "article": {
     "author": "Author German"
-  }
+  },
+  "amount": "Diese Seite enthält {{count}} Artikel singular",
+  "amount_plural": "Diese Seite enthält {{count}} Artikel plural",
+  "nesting": "BTW, $t(amount, {'count': {{count}} })"
 }
