@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { withTranslation} from 'react-i18next';
 import news from '../../services/news';
 import NewsPreview from '../NewsPreview';
-import { useTranslation } from "react-i18next";
 
-const NewsFeed = () => {
+const NewsFeed = ({ t }) => {
 
 		const [state, setState] = useState({
 			articles: '',
@@ -21,20 +21,18 @@ const NewsFeed = () => {
 				});
 		}, []);
 
-
-		const { t, i18n } = useTranslation();
-
 		return (
 
 			<div>
 				<span>{t('nesting', {count: state.totalResults})}</span>
+				<span>{t('No one says a key can not be the fallback.')}</span>
 				{
 					Array.from(state.articles).map((value, k) => {
-						return <NewsPreview article={value} key={k}/>
+						return <NewsPreview article={value} key={k} t={ t }/>
 					})
 				}
 				</div>
 		)
 };
 
-export default NewsFeed;
+export default withTranslation()(NewsFeed);

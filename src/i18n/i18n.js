@@ -16,22 +16,39 @@ i18n
 // init i18next
 // for all options read: https://www.i18next.com/overview/configuration-options
 .init({
-	backend: {
-		// for all available options read the backend's repository readme file
-		loadPath: '/locales/{{lng}}.json'
-	},
-	fallbackLng: 'en',
-	debug: true,
 	react: {
-		useSuspense: false //   <---- this will do the magic
+		useSuspense: false, //   <---- this will do the magic
+		wait: true
 	},
+	backend: {
+		loadPath: '/locales/{{lng}}/{{ns}}.json',
+			// path to post missing resources
+		addPath: '/locales/add/{{lng}}/{{ns}}',
+		allowMultiLoading: true,
+	},
+	lng: 'en',
+
+	// allow keys to be phrases having `:`, `.`
+	nsSeparator: false,
+	keySeparator: false,
+
+	// do not load a fallback
+	fallbackLng: 'en',
+	fallbackNS: 'translation',
+	debug: true,
+	ns: ["translation", "header", "random"],
+	defaultNS: "translation",
 	interpolation: {
 		escapeValue: false, // not needed for react as it escapes by default
 	},
-	saveMissing: true,
-	load:  'currentOnly'
-
+	saveMissing: true
 });
 
+i18n
+.loadNamespaces(['translation','header'])
+.then(() => {});
+
+
+i18n.on('missingKey', function(lngs, namespace, key, res) {console.log(key)});
 
 export default i18n;

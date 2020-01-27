@@ -1,8 +1,9 @@
-import React, { Component, Suspense } from 'react';
-
+import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './App.css';
 import NewsFeed from "./components/NewsFeed"
 import Header from "./components/Header"
+
 
 class App extends React.Component {
 
@@ -17,4 +18,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withTranslation()(App);

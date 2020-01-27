@@ -1,30 +1,15 @@
 import React, {  } from 'react';
-import {useTranslation} from "react-i18next";
-import i18n from '../../i18n/i18n';
+import { withTranslation } from "react-i18next";
 
-// export const { t, i18n } = useTranslation();
 
-export const changeLanguage = lng => {
-	i18n.changeLanguage(lng);
-};
-
-export const LanguageBar = () => {
+const Header = ({ t, i18n }, props) => {
 	return (
 		<div>
-			<button onClick={() => changeLanguage('de')}>de</button>
-			<button onClick={() => changeLanguage('en')}>en</button>
+			<p>{t('Need to save this text')}</p>
+			<button onClick={() => i18n.changeLanguage('de')}>de</button>
+			<button onClick={() => i18n.changeLanguage('en')}>en</button>
 		</div>
 	)
 };
 
-const Header = props => {
-	const { t, i18n } = useTranslation();
-	return (
-		<div>
-			<p>{t('title')}</p>
-			<LanguageBar/>
-		</div>
-	)
-};
-
-	export default Header;
+	export default withTranslation('header')(Header);
