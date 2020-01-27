@@ -4,9 +4,7 @@
     "part1": "Um loszulegen, ändere <1>src/App(DE).js</1> speicheren und neuladen.",
     "part2": "Ändere die Sprachen zwischen deutsch und englisch mit Hilfe der beiden Schalter."
   },
-  "article": {
-    "author": "Author German"
-  },
+  "author": "Author German",
   "amount": "Diese Seite enthält {{count}} Artikel singular",
   "amount_plural": "Diese Seite enthält {{count}} Artikel plural",
   "nesting": "BTW, $t(amount, {'count': {{count}} })"

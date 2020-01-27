@@ -4,9 +4,7 @@
     "part1": "gghjghjhg",
     "part2": "Switch language between english and german using buttons above."
   },
-  "article": {
-    "author": "Author English"
-  },
+  "author": "Author English",
   "amount": "This page contains {{count}} article",
   "amount_plural": "This page contains {{count}} articles",
   "nesting": "BTW, $t(amount, {'count': {{count}} })"
